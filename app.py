@@ -16,7 +16,7 @@ from flask import jsonify
 app = Flask(__name__)
 
 # This is the path to the upload directory
-app.config['UPLOAD_FOLDER'] = 'https://github.com/Koffi-Cobbin/test_lab/tree/master/uploads'
+app.config['UPLOAD_FOLDER'] = '/tmp'
 # These are the extension that we are accepting to be uploaded
 app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg', 'gif'])
 app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # 2MB
