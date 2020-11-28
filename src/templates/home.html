@@ -1,0 +1,263 @@
+{% extends '_base.html' %}
+
+{% block body %}
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>About OCUPUALOR ELIJAH </h2>
+        <h4>
+            OCUPUALOR ELIJAH is a Data Science, and Machine Learning enthusiast who's currently pursuing BSc Computer
+            Engineering at the prestigious KWAME NKRUMAH UNIVERSITY OF SCIENCE and TECHNOLOGY.
+        </h4>
+        <p>
+            His concern at this point in his education is to capitalize opun new opportunities for carrer development
+            within an organisation that values hardwork, integrity and results.
+            As a Data Science and Machine Learning enthusiast, he strongly believes that given an opportunity to 
+            commit people, capital and ideas to drive new perspectives can significantly contribute to make a change in the
+            technological advancement of the country and Africa as a whole.
+            While the world is growing rapidly in technology, his aim is to focus on developing technologies and effective
+            problem-solving solutions to address the problems of the societies.
+            It is his motivation and drive to make Agriculture, the back-bone of the country as youth friendly as possible.
+            OCUPUALOR ELIJAH is a young robotics enthusiast who is facinated at the innovative applications of robots.
+            Get to know more about him :-)
+        <br><button class="btn btn-default btn-lg">Get in Touch</button>
+      </div>
+      <div class="col-sm-4">
+        <img src="{{ url_for('static', filename='img/me.jpg') }}" class="img-circle" alt="IMAGE" style="margin-bottom: 0;"/>
+        <h4 class="text-center" style="margin-top: 2px; margin-bottom: 0;"> Mr. OCUPUALOR ELIJAH </h4>
+        <h5 class="text-center"> CEO & Managing Director of <b> TechXperience Innovation Hub </b></h5>
+        <h5 class="text-center"> Data Sientist, Data Analyst</h5>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid bg-grey">
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-heart logo logo-sm slideanim"></span>
+      </div>
+      <div class="col-sm-8">
+        <h2> VALUES </h2>
+        <h4>
+            <strong>MISSION:</strong> His mission is to make Agriculture, the back-bone of the country as youth friendly as possible.
+            He aims at developing a more modernized and efficient systems to support the Agricultural sector of the country
+            while creating jobs for the youth as well.
+        </h4>
+        <p><strong>VISION:</strong> His vision is to become the beacon and drive that leads Africa to SPACE!
+            He always asks himself a question,  " Should I be given the opportunity to create a satillite for Africa, What
+            would be its purpose and how would it improve the technological advancement of Africa?". 
+            What's your answer? 
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Container (Services Section)  -->
+  <div id="services" class="container-fluid text-center">
+    <h2>SERVICES</h2>
+    <h4> What he offers </h4>
+    <div class="row slideanim">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-lock logo-small"></span>
+        <h4> Software Applications </h4>
+        <p> Get your personal or business related Software applications done with the best user experience in a professional way.</p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-wrench logo-small"></span>
+        <h4> Machine Learning Models </h4>
+        <p> Experience developed amazing machine learning models that to tackle various intuitive tasks. </p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-globe logo-small "></span>
+        <h4> Web applications </h4>
+        <p> Get your secured web applications for business organisations and for individuals or clients.</p>
+      </div>
+    </div>
+    <br><br>
+    <div class="row slideanim">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-leaf logo-small"></span>
+        <h4> Hydroponics Systems </h4>
+        <p> Currently under development </p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-cog logo-small"></span>
+        <h4 style="color:#303030;"> Robotics </h4>
+        <p> Secure your work place with the best fault detection systems. </p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-certificate logo-small"></span>
+        <h4> Certified Courses </h4>
+        <p> Learn with TechXperience Innovation Hub and gain a certificate. </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Container (Portfolio Section) -->
+  <div id="portfolio" class="container-fluid text-center bg-grey">
+    <h2>Portfolio</h2><br>
+    <h4> Few enumerated projects created</h4>
+    <div class="row text-center slideanim">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="{{ url_for('static', filename='img/softwareapp.jpg') }}" alt="Alert Service" width="400" height="300">
+          <p><strong> Pricing Alert Service </strong></p>
+          <p> Sign-up to NotiFy and get your alerts on preferred e-commerce items</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="{{ url_for('static', filename='img/hydroponics.jpeg') }}" alt="Hydroponics" width="400" height="300">
+          <p><strong> Hydroponics System </strong></p>
+          <p> Download I-FarmWorld and Experience mordernized remote farming. </p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="{{ url_for('static', filename='img/robotics.jpg') }}" alt="San Francisco" width="400" height="300">
+          <p><strong> Fault Detection System </strong></p>
+          <p> Secure your homes, offices and organisations with the best fault detection systems.</p>
+        </div>
+      </div>
+    </div><br>
+    
+    <h2> What customers say </h2>
+    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+  
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <h4>" I-FarmWorld is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+        </div>
+        <div class="item">
+          <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+        </div>
+        <div class="item">
+          <h4>"Could I... BE any more happy with ELIJAH?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+        </div>
+      </div>
+  
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Container (Pricing Section) -->
+  <div id="pricing" class="container-fluid">
+    <div class="text-center">
+      <h2> PRODUCTS </h2>
+      <h4> Choose a product that works for you. </h4>
+    </div>
+    <div class="row slideanim">
+      <div class="col-sm-4 col-xs-12">
+        <div class="panel panel-default text-center">
+          <div class="panel-heading">
+            <h1> I-FarmWorld </h1>
+          </div>
+          <div class="panel-body">
+            <p><strong>*</strong> Farm everywhere, anytime </p>
+            <p><strong>*</strong> Monitor farm data in real time </p>
+            <p><strong>*</strong> Control irrigation remotely </p>
+            <p><strong>*</strong>Save time </p>
+          </div>
+          <div class="panel-footer">
+            <h3>$500</h3>
+            <button class="btn btn-lg"> Buy </button>
+          </div>
+        </div>      
+      </div>     
+      <div class="col-sm-4 col-xs-12">
+        <div class="panel panel-default text-center">
+          <div class="panel-heading">
+            <h1>Pricing Alert Service</h1>
+          </div>
+          <div class="panel-body">
+            <p><strong>*</strong> Tag preffered e-commerce items</p>
+            <p><strong>*</strong> Set a price limit </p>
+            <p><strong>*</strong> Get notified when price falls below limit</p>
+            <p><strong>*</strong> Be the first to buy </p>
+          </div>
+          <div class="panel-footer">
+            <h3> Experience it!</h3>
+            <button class="btn btn-lg"> Sign-up </button>
+          </div>
+        </div>      
+      </div>       
+      <div class="col-sm-4 col-xs-12">
+        <div class="panel panel-default text-center">
+          <div class="panel-heading">
+            <h1> Secure </h1>
+          </div>
+          <div class="panel-body">
+            <p><strong>*</strong> Install secure at your workplace or home </p>
+            <p><strong>*</strong> Get an Alert when a fault id detected </p>
+            <p><strong>*</strong> Get Fire Service notified by the system in case of fire outbreak.</p>
+            <p><strong>*</strong> Create a conducive workplace </p>
+          </div>
+          <div class="panel-footer">
+            <h3> $400 </h3>
+            <button class="btn btn-lg"> Buy </button>
+          </div>
+        </div>      
+      </div>    
+    </div>
+  </div>
+  {% endblock %}
+
+{% block footer %}
+  <!-- Container (Contact Section) -->
+  <div id="contact" class="container-fluid" style="margin-top: 0;">
+    <hr style="height:2px;border-width:0;background-color:#fff; margin-top: 0;">
+    <h2 class="text-center" style="color: #fff; margin-top: 0;"> CONTACT </h2>
+    <div class="row">
+      <div class="col-sm-5">
+        <p><span class="glyphicon glyphicon-map-marker"></span> Acrra, Ghana </p>
+        <p><span class="glyphicon glyphicon-phone"></span> +233 575409915 </p>
+        <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:infotexperience@gmail.com"></a> Send A Mail </p>
+      </div>
+
+      <div class="col-sm-1 vl"> </div> 
+
+      <div class="col-sm-6 slideanim">
+        <form action="/contact" method="POST">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+          </div>
+        </div>
+        <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea><br>
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <button class="btn btn-default pull-right" type="submit">Send</button>
+          </div>
+        </div>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="notification is-success">
+                {{ messages[0] }}
+            </div>
+            {% endif %}
+          {% endwith %}
+      </form>
+      </div>
+    </div>
+    <p><small>&copy; 2020 All rights reserved.</small></p>
+  </div>
+{% endblock %}
