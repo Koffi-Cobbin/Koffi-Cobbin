@@ -21,7 +21,7 @@
             It is his motivation and drive to make Agriculture, the back-bone of the country as youth friendly as possible.
             OCUPUALOR ELIJAH is a young robotics enthusiast who is facinated at the innovative applications of robots.
             Get to know more about him :-)
-        <br><button class="btn btn-default btn-lg">Get in Touch</button>
+        <br><a href="#getInTouch"><button class="btn btn-default btn-lg">Get in Touch</button>
       </div>
       <div class="col-sm-4">
         <img src="{{ url_for('static', filename='img/me.jpg') }}" class="img-circle" alt="IMAGE" style="margin-bottom: 0;"/>
@@ -166,7 +166,7 @@
       <div class="col-sm-4 col-xs-12">
         <div class="panel panel-default text-center">
           <div class="panel-heading">
-            <h1> I-FarmWorld </h1>
+            <h3> I-FarmWorld </h3>
           </div>
           <div class="panel-body">
             <p><strong>*</strong> Farm everywhere, anytime </p>
@@ -183,7 +183,7 @@
       <div class="col-sm-4 col-xs-12">
         <div class="panel panel-default text-center">
           <div class="panel-heading">
-            <h1>Pricing Alert Service</h1>
+            <h3>Pricing Alert Service</h3>
           </div>
           <div class="panel-body">
             <p><strong>*</strong> Tag preffered e-commerce items</p>
@@ -192,15 +192,15 @@
             <p><strong>*</strong> Be the first to buy </p>
           </div>
           <div class="panel-footer">
-            <h3> Experience it!</h3>
-            <button class="btn btn-lg"> Sign-up </button>
+            <h5> Experience it!</h5>
+            <a href="http://pheel-pricing-service.herokuapp.com/"><button class="btn btn-lg"> Sign-up </button></a>
           </div>
         </div>      
       </div>       
       <div class="col-sm-4 col-xs-12">
         <div class="panel panel-default text-center">
           <div class="panel-heading">
-            <h1> Secure </h1>
+            <h3> Secure </h3>
           </div>
           <div class="panel-body">
             <p><strong>*</strong> Install secure at your workplace or home </p>
@@ -221,13 +221,12 @@
 {% block footer %}
   <!-- Container (Contact Section) -->
   <div id="contact" class="container-fluid" style="margin-top: 0;">
-    <hr style="height:2px;border-width:0;background-color:#fff; margin-top: 0;">
     <h2 class="text-center" style="color: #fff; margin-top: 0;"> CONTACT </h2>
     <div class="row">
       <div class="col-sm-5">
         <p><span class="glyphicon glyphicon-map-marker"></span> Acrra, Ghana </p>
         <p><span class="glyphicon glyphicon-phone"></span> +233 575409915 </p>
-        <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:infotexperience@gmail.com"></a> Send A Mail </p>
+        <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:infotexperience@gmail.com"> Send An Mail </a></p>
       </div>
 
       <div class="col-sm-1 vl"> </div> 
@@ -258,6 +257,13 @@
       </form>
       </div>
     </div>
-    <p><small>&copy; 2020 All rights reserved.</small></p>
+    <div id="getInTouch">
+      <a href="https://www.linkedin.com/mwlite/in/elijah-ocupualor-588734180" class="fa fa-linkedin"></a>
+      <a href="https://www.instagram.com/koffi_cobbin/" class="fa fa-instagram"></a>
+      <a href="https://mobile.twitter.com/koffi_cobbin" class="fa fa-twitter"></a>
+      <a href="https://www.facebook.com/profile.php?id=100009394054290" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-youtube"></a>
   </div>
+  <p style="text-align: right;" ><small>&copy; 2020 All rights reserved.</small></p>
+</div>
 {% endblock %}
