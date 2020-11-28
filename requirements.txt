@@ -4,4 +4,4 @@ requests==2.24.0
 passlib==1.6.5
 uwsgi
 Jinja2==2.8
-Werkzeug==0.10.4
+werkzeug==0.15.4
