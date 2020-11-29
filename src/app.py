@@ -14,42 +14,18 @@ app.secret_key =  app.secret_key = os.environ.get("SECRETE_KEY") #"1234"
 def home():
     return render_template('home.html')
 
-def send(name, email, content):
-    return requests.post(
-        MsgsConstants.URL,
-        auth = ("api", MsgsConstants.API_KEY),
-        data = {
-            "from": MsgsConstants.FROM,
-            "to": MsgsConstants.ADMINS_EMAIL,
-            "subject": "Email from {}, {}.".format(name, email),
-            "text": "{}".format(content)
-        }
-    )
-
-@app.route('/contact', methods=['POST'])
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
+    if request.method == 'GET':
+        with open("messages.txt", 'r') as messages:
+            content = messages.readlines()
+            return render_template('messages.html', messages=content)
+
     name = request.form['name']
     email = request.form['email']
-    content = request.form['message']
-    """
-        Using SMTP_SSL()
-    """
-    smtp_server = "smtp.gmail.com"
-    sender_email = os.environ.get("SENDER_EMAIL") 
-    receiver_email = os.environ.get("ADMINS_EMAIL")
-    password = os.environ.get("PASSWORD")
-    message = """\
-    {}
+    message = request.form['message']
 
-    Hi there,
-    A message from {}, {}. 
-    {}.""".format(sender_email, name, email, content)
-
-    # Create a secure SSL context
-    context = ssl.create_default_context()
-
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message)
-    flash('Message Sent (:')
-    return redirect(url_for('home'))
+    with open("messages.txt", 'a') as messages:
+        messages.write(f" {name}    {email}      {message} \n")
+        flash('Message Sent (:')
+        return redirect(url_for('home'))
