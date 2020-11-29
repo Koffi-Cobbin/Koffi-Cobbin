@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, url_for, flash
 import os, requests
 import smtplib, ssl
 import src.models.msgs.constants as MsgsConstants #src.
-
+from werkzeug.utils import redirect
 
 app = Flask(__name__)
 app.config.from_object('src.config') #src.
