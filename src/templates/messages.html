@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koffi-Cobbin-Messages</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist\css\bootstrap.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1> Messages <small>list of received messages </small></h1>
+        </div>
+        {% if messages %}
+        <div class="list-group">
+        {% for message in messages %}
+        <div class="list-group-item">
+            <p class="list-group-item-text"> {{ message }} </p>
+        </div>
+        {% endfor %}
+
+        {% else %}
+        <h3> There are no messages </h3>
+        {% endif %}
+        </div>
+    </div>
+</body>
+</html>
