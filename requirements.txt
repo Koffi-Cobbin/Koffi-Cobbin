@@ -3,5 +3,5 @@ Pymongo==3.10.1
 requests==2.24.0
 passlib==1.6.5
 uwsgi
-Jinja2==2.8
+Jinja2>=2.10.1
 werkzeug==0.15.5
