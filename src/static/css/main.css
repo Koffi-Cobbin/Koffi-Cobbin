@@ -246,30 +246,35 @@ body {
   padding: 8px;
   background: #3B5998;
   color: white;
+  text-decoration: none;
 }
 
 .fa-twitter {
   padding: 8px;
   background: #55ACEE;
   color: white;
+  text-decoration: none;
 }
 
 .fa-linkedin {
   padding: 8px;
   background: #007bb5;
   color: white;
+  text-decoration: none;
 }
 
 .fa-youtube {
   padding: 8px;
   background: #bb0000;
   color: white;
+  text-decoration: none;
 }
 
 .fa-instagram {
   padding: 8px;
   background: #125688;
   color: white;
+  text-decoration: none;
 }
 
 .fa-linkedin:hover, .fa-instagram:hover, .fa-twitter:hover, .fa-facebook:hover, .fa-youtube:hover {
