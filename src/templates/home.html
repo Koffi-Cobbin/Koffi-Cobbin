@@ -176,7 +176,7 @@
           </div>
           <div class="panel-footer">
             <h3>$500</h3>
-            <button class="btn btn-lg"> Buy </button>
+            <button class="btn btn-lg" onclick="message()"> Buy </button>
           </div>
         </div>      
       </div>     
@@ -210,7 +210,7 @@
           </div>
           <div class="panel-footer">
             <h3> $400 </h3>
-            <button class="btn btn-lg"> Buy </button>
+            <button class="btn btn-lg" onclick="message()"> Buy </button>
           </div>
         </div>      
       </div>    
@@ -267,4 +267,12 @@
   </div>
   <p style="text-align: right;" ><small>&copy; 2020 All rights reserved.</small></p>
 </div>
+{% endblock %}
+{% block js %}
+<script>
+    function message(){
+        alert("This package is no more available");
+    
+    }
+</script>
 {% endblock %}
