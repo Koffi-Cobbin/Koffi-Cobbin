@@ -39,7 +39,7 @@ export default function ContactForm() {
   }
 
   if (status === 'sent') {
-    return <p className="mt-8 text-sm">Message sent. I'll get back to you soon.</p>;
+    return <p className="mt-8 text-sm">Message sent. I&apos;ll get back to you soon.</p>;
   }
 
   return (

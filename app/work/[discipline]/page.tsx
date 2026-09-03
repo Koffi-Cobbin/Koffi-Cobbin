@@ -5,10 +5,11 @@ import ProjectCard from '@/components/ProjectCard';
 export default async function DisciplinePage({
   params,
 }: {
-  params: { discipline: string };
+  params: Promise<{ discipline: string }>;
 }) {
+  const { discipline: disciplineSlug } = await params;
   const disciplines = await getDisciplines();
-  const discipline = disciplines.find((d) => d.slug === params.discipline);
+  const discipline = disciplines.find((d) => d.slug === disciplineSlug);
   if (!discipline) notFound();
 
   const projects = await getProjects({ discipline: discipline.slug });

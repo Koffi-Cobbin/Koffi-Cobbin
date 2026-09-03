@@ -5,10 +5,11 @@ import { getProject } from '@/lib/api';
 export default async function ProjectPage({
   params,
 }: {
-  params: { discipline: string; slug: string };
+  params: Promise<{ discipline: string; slug: string }>;
 }) {
-  const project = await getProject(params.slug);
-  if (!project || project.discipline !== params.discipline) notFound();
+  const { discipline, slug } = await params;
+  const project = await getProject(slug);
+  if (!project || project.discipline !== discipline) notFound();
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">
