@@ -70,7 +70,7 @@ export default function ContactForm() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.1, duration: 0.5 }}
       onSubmit={handleSubmit(onSubmit)} 
-       className="mt-10 flex max-w-xl flex-col gap-6 sm:mt-12"
+       className="mt-6 flex max-w-xl flex-col gap-4 sm:mt-8 sm:gap-5"
     >
       <div className="hidden">
         <label htmlFor="honeypot">Leave this field empty</label>
@@ -84,7 +84,7 @@ export default function ContactForm() {
         <input
           id="name"
           {...register('name')}
-           className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink"
+           className="mt-1.5 w-full border border-line bg-transparent px-4 py-2.5 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink sm:mt-2 sm:py-3"
            aria-invalid={!!errors.name}
            aria-describedby={errors.name ? 'name-error' : undefined}
         />
@@ -99,7 +99,7 @@ export default function ContactForm() {
           id="email"
           type="email"
           {...register('email')}
-           className="mt-2 w-full border border-line bg-transparent px-4 py-3 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink"
+           className="mt-1.5 w-full border border-line bg-transparent px-4 py-2.5 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink sm:mt-2 sm:py-3"
            aria-invalid={!!errors.email}
            aria-describedby={errors.email ? 'email-error' : undefined}
         />
@@ -112,9 +112,9 @@ export default function ContactForm() {
         </label>
         <textarea
           id="message"
-          rows={6}
+           rows={4}
           {...register('message')}
-           className="mt-2 w-full resize-none border border-line bg-transparent px-4 py-3 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink"
+           className="mt-1.5 w-full resize-none border border-line bg-transparent px-4 py-2.5 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink sm:mt-2 sm:py-3"
            aria-invalid={!!errors.message}
            aria-describedby={errors.message ? 'message-error' : undefined}
         />
@@ -128,7 +128,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="mt-4 min-h-12 w-full border-2 border-ink bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-paper transition-all hover:bg-transparent hover:text-ink disabled:cursor-not-allowed disabled:opacity-50 sm:w-fit"
+        className="mt-2 min-h-11 w-full border-2 border-ink bg-ink px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-paper transition-all hover:bg-transparent hover:text-ink disabled:cursor-not-allowed disabled:opacity-50 sm:mt-3 sm:w-fit sm:py-3"
       >
         {status === 'sending' ? 'Sending...' : 'Send message'}
       </button>
