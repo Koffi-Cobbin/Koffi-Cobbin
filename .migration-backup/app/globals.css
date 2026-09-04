@@ -2,11 +2,170 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Google Fonts ────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ─── CSS Custom Properties ───────────────────────────────────────── */
 :root {
-  --font-display: 'Georgia', serif;
-  --font-body: system-ui, sans-serif;
+  /* Typography */
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Discipline accent colors (for dynamic theming) */
+  --accent-software: #0ea5e9;
+  --accent-hardware: #f97316;
+  --accent-impact: #10b981;
+
+  /* Spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ─── Base Styles ─────────────────────────────────────────────────── */
+@layer base {
+  html {
+    @apply scroll-smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-paper text-ink font-body;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-ink;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ink;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-software-200 text-ink;
+  }
+}
+
+/* ─── Component Utilities ─────────────────────────────────────────── */
+@layer components {
+  /* Discipline accent colors applied via data attributes */
+  [data-discipline="software"] {
+    --accent: var(--accent-software);
+    --accent-light: #e0f2fe;
+    --accent-dark: #0369a1;
+  }
+
+  [data-discipline="hardware"] {
+    --accent: var(--accent-hardware);
+    --accent-light: #ffedd5;
+    --accent-dark: #c2410c;
+  }
+
+  [data-discipline="impact"] {
+    --accent: var(--accent-impact);
+    --accent-light: #d1fae5;
+    --accent-dark: #047857;
+  }
+
+  /* Card component with discipline theming */
+  .card {
+    @apply bg-white border border-line rounded-lg p-6 transition-all duration-200;
+    @apply hover:shadow-medium hover:-translate-y-0.5;
+  }
+
+  .card-discipline {
+    @apply card border-t-4;
+    border-top-color: var(--accent);
+  }
+
+  /* Button styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg transition-all duration-200;
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-paper hover:bg-ink-light;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent border border-line text-ink hover:bg-paper-dark;
+  }
+
+  .btn-software {
+    @apply btn bg-software-500 text-white hover:bg-software-600;
+  }
+
+  .btn-hardware {
+    @apply btn bg-hardware-500 text-white hover:bg-hardware-600;
+  }
+
+  .btn-impact {
+    @apply btn bg-impact-500 text-white hover:bg-impact-600;
+  }
+
+  /* Tag/chip component */
+  .tag {
+    @apply inline-flex items-center px-3 py-1 text-sm font-medium rounded-full;
+    @apply bg-paper-dark text-muted border border-line;
+  }
+
+  .tag-software {
+    @apply tag bg-software-50 text-software-700 border-software-200;
+  }
+
+  .tag-hardware {
+    @apply tag bg-hardware-50 text-hardware-700 border-hardware-200;
+  }
+
+  .tag-impact {
+    @apply tag bg-impact-50 text-impact-700 border-impact-200;
+  }
+
+  /* Timeline styles */
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-line;
+  }
+
+  .timeline-item::before {
+    @apply absolute left-0 top-0 w-3 h-3 -translate-x-1.5 rounded-full bg-white border-2 border-current;
+    content: '';
+  }
+
+  .timeline-item[data-discipline="software"]::before {
+    @apply border-software-500;
+  }
+
+  .timeline-item[data-discipline="hardware"]::before {
+    @apply border-hardware-500;
+  }
+
+  .timeline-item[data-discipline="impact"]::before {
+    @apply border-impact-500;
+  }
+}
+
+/* ─── Reduced Motion ──────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -16,13 +175,13 @@
   }
 }
 
-body {
-  background: theme('colors.paper');
-  color: theme('colors.ink');
-}
+/* ─── Print Styles ────────────────────────────────────────────────── */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
 
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid theme('colors.ink');
-  outline-offset: 2px;
+  .no-print {
+    display: none !important;
+  }
 }

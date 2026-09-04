@@ -43,6 +43,25 @@ export async function getProjects(opts?: {
   return projectSummaries(list);
 }
 
+// Optimized function to get all featured projects grouped by discipline
+// Used on the home page to avoid N+1 fetching
+export async function getFeaturedProjectsByDiscipline(): Promise<
+  Map<string, ProjectSummary[]>
+> {
+  // Fetch all featured projects in a single call
+  const allFeatured = await getProjects({ featured: true });
+
+  // Group by discipline
+  const grouped = new Map<string, ProjectSummary[]>();
+  for (const project of allFeatured) {
+    const existing = grouped.get(project.discipline) || [];
+    existing.push(project);
+    grouped.set(project.discipline, existing);
+  }
+
+  return grouped;
+}
+
 export async function getProject(slug: string): Promise<Project | null> {
   const remote = await fetchJSON<Project>(`/api/projects/${slug}/`);
   if (remote) return remote;
