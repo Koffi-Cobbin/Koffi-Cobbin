@@ -50,30 +50,22 @@ export default function DisciplineWorkPage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="flex items-center justify-between gap-4 border-b border-line pb-4">
-            <p
+            <h1
               className="border-l-4 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-muted"
               style={{ borderLeftColor: discipline.theme_color }}
             >
               {discipline.name}
-            </p>
+            </h1>
             <p className="text-[11px] font-bold uppercase tracking-widest text-muted">
               {featuredProjects.length} featured projects
             </p>
           </div>
 
-          <div className="mt-8 sm:mt-10">
-            <div className="flex items-end justify-between gap-4 border-b border-line pb-4">
-              <h1 className="font-display text-3xl leading-none tracking-tight sm:text-4xl">Featured projects</h1>
-              <p className="hidden max-w-xs text-right text-sm leading-relaxed text-muted sm:block">
-                Selected software built for real teams and real outcomes.
-              </p>
-            </div>
-
-            <div className="mt-6 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-              {featuredProjects.map((project, index) => (
-                <ProjectCard key={project.slug} project={project} index={index} />
-              ))}
-            </div>
+          <h2 className="sr-only">Featured projects</h2>
+          <div className="mt-6 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+            {featuredProjects.map((project, index) => (
+              <ProjectCard key={project.slug} project={project} index={index} />
+            ))}
           </div>
 
           {nonFeaturedProjects.length > 0 && (
