@@ -1,6 +1,6 @@
-# [Project name]
+# Portfolio
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A responsive portfolio for shipped software, physical prototypes, and impact-focused projects.
 
 ## Run & Operate
 
@@ -22,23 +22,28 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/portfolio/src/pages/` — client-rendered portfolio routes
+- `artifacts/portfolio/src/components/` — shared navigation, content, and form components
+- `artifacts/portfolio/src/mocks/data.ts` — current local content source
+- `artifacts/portfolio/src/index.css` — portfolio theme tokens and responsive base styles
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The imported Next.js portfolio is served as a frontend-only Vite artifact because its API fallback and content are currently local mock data.
+- Wouter handles client-side routes and the managed artifact serves the app at `/`.
+- Project detail routes are client-rendered so cards remain useful even before the remote content API is provisioned.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Visitors can browse work by discipline, open project case studies, learn about the maker's experience, and send a contact message.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+The interface should prioritize mobile-first usability and comfortable touch targets.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+The frontend currently falls back to `src/mocks/data.ts` when `VITE_API_URL` is not configured.
 
 ## Pointers
 

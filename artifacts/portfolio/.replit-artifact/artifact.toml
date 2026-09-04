@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Portfolio"
+description = "A portfolio showcasing shipped software, hardware prototypes, and impact-focused projects across multiple disciplines."
+version = "1.0.0"
+id = "artifacts/portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21113
+
+[services.development]
+run = "pnpm --filter @workspace/portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21113"
+BASE_PATH = "/"
