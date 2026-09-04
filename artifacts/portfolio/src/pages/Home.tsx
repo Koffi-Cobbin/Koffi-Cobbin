@@ -46,8 +46,8 @@ export default function HomePage() {
           Building across software, hardware, and impact.
         </h1>
         <p className="mt-6 max-w-prose text-base font-medium leading-relaxed text-muted sm:mt-8 sm:text-xl">
-          A working portfolio of shipped products, physical prototypes, and
-          projects built for real-world outcomes.
+          A record of shipped products, physical prototypes, and work that moves
+          real outcomes forward.
         </p>
         <div className="mt-8 flex flex-col gap-3 text-sm font-medium sm:flex-row">
           <Link href="/work/software" className="inline-flex min-h-11 items-center justify-center border-2 border-ink bg-ink px-5 py-3 text-paper transition-colors hover:bg-transparent hover:text-ink">
