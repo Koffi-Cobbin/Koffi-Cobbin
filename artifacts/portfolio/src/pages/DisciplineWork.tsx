@@ -45,7 +45,7 @@ export default function DisciplineWorkPage() {
 
   if (isSoftwarePage && featuredProject) {
     return (
-      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12 md:py-14 lg:py-16">
+      <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-8 md:py-8 lg:py-10">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
