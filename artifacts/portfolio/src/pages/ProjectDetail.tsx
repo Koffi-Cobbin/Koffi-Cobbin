@@ -39,7 +39,7 @@ export default function ProjectDetailPage() {
   ].filter(Boolean) as { href: string; label: string; icon: typeof Github }[];
 
   return (
-    <article className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16 md:py-24">
+    <article className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16 md:py-20 lg:py-24">
       <Link href={`/work/${project.discipline}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-ink">
         <ArrowLeft size={16} aria-hidden="true" />
         Back to {discipline?.name ?? 'work'}
