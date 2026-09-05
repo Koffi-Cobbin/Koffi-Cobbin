@@ -28,9 +28,9 @@ export default function Header() {
         <Link
           href="/"
           className="font-display text-xl tracking-tight transition-opacity hover:opacity-70"
-          aria-label="Portfolio home"
+          aria-label="Koffi Cobbin home"
         >
-          Portfolio
+          Koffi Cobbin
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm font-medium text-muted sm:flex lg:gap-8" aria-label="Main navigation">
