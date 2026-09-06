@@ -17,7 +17,7 @@ export default function DisciplineCard({
   disciplineCount = 3,
 }: Props) {
   const featuredProject = flagshipProjects[0];
-  const projectCount = featuredProject ? 1 : 0;
+  const featuredProjectCount = flagshipProjects.length;
   const titleId = `discipline-card-title-${discipline.slug}`;
 
   return (
@@ -65,7 +65,9 @@ export default function DisciplineCard({
             Featured work
           </p>
           <span className="font-mono text-xs text-muted">
-            {String(projectCount).padStart(2, '0')} {projectCount === 1 ? 'project' : 'projects'}
+            {featuredProject
+              ? `01 / ${String(featuredProjectCount).padStart(2, '0')}`
+              : '00 / 00'}
           </span>
         </div>
 
