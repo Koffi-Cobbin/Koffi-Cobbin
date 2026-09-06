@@ -2,6 +2,7 @@ import { Link, useParams } from 'wouter';
 import { useQuery } from '@tanstack/react-query';
 import { getDisciplines, getProjects } from '@/lib/api';
 import ProjectCard from '@/components/ProjectCard';
+import SEO from '@/components/SEO';
 import NotFound from '@/pages/not-found';
 import { motion } from 'framer-motion';
 
@@ -44,6 +45,11 @@ export default function DisciplineWorkPage() {
   if (isSoftwarePage) {
     return (
       <div className="mx-auto max-w-5xl px-4 pb-6 pt-3 sm:px-6 sm:pb-8 sm:pt-5 md:pb-8 md:pt-6 lg:pb-10 lg:pt-8">
+        <SEO
+          title={discipline.name}
+          description={discipline.description}
+          url={`https://kofficobbin.com/work/${discipline.slug}`}
+        />
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -95,6 +101,11 @@ export default function DisciplineWorkPage() {
   if (isHardwarePage) {
     return (
       <div className="mx-auto max-w-5xl px-4 pb-6 pt-3 sm:px-6 sm:pb-8 sm:pt-5 md:pb-10 md:pt-6 lg:pb-12 lg:pt-8">
+        <SEO
+          title={discipline.name}
+          description={discipline.description}
+          url={`https://kofficobbin.com/work/${discipline.slug}`}
+        />
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -231,6 +242,11 @@ export default function DisciplineWorkPage() {
 
     return (
       <div className="mx-auto max-w-5xl px-4 pb-6 pt-3 sm:px-6 sm:pb-8 sm:pt-5 md:pb-10 md:pt-6 lg:pb-12 lg:pt-8">
+        <SEO
+          title={discipline.name}
+          description={discipline.description}
+          url={`https://kofficobbin.com/work/${discipline.slug}`}
+        />
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -360,6 +376,11 @@ export default function DisciplineWorkPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20 md:py-20 lg:py-24">
+      <SEO
+        title={discipline.name}
+        description={discipline.description}
+        url={`https://kofficobbin.com/work/${discipline.slug}`}
+      />
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}

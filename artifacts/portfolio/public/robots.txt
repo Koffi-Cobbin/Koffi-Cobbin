@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://kofficobbin.com/sitemap.xml

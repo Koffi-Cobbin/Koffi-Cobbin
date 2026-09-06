@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getDisciplines, getProjects } from '@/lib/api';
 import DisciplineCard from '@/components/DisciplineCard';
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 
@@ -36,6 +37,11 @@ export default function HomePage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20 md:py-20 lg:py-24">
+      <SEO
+        title={undefined}
+        description="Portfolio of Koffi Cobbin — shipping software, physical prototypes, and projects built for real-world outcomes. Explore work in design, development, and innovation."
+        url="https://kofficobbin.com"
+      />
       <motion.section 
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}

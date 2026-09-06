@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Github,
 import { Link, useParams } from 'wouter';
 import { motion } from 'framer-motion';
 import { getDisciplines, getProject } from '@/lib/api';
+import SEO from '@/components/SEO';
 import NotFound from '@/pages/not-found';
 
 export default function ProjectDetailPage() {
@@ -55,6 +56,28 @@ export default function ProjectDetailPage() {
 
   return (
     <article className="mx-auto max-w-5xl px-4 py-4 sm:px-6 sm:py-6 md:py-8 lg:py-10">
+      <SEO
+        title={project.title}
+        description={project.summary}
+        image={project.cover_image.startsWith('http') ? project.cover_image : `https://kofficobbin.com${project.cover_image}`}
+        url={`https://kofficobbin.com/work/${project.discipline}/${project.slug}`}
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          'name': project.title,
+          'description': project.summary,
+          'url': `https://kofficobbin.com/work/${project.discipline}/${project.slug}`,
+          'image': project.cover_image.startsWith('http') ? project.cover_image : `https://kofficobbin.com${project.cover_image}`,
+          'author': {
+            '@type': 'Person',
+            'name': 'Koffi Cobbin',
+            'url': 'https://kofficobbin.com'
+          },
+          'datePublished': project.date,
+          'keywords': project.tech_stack.join(', ')
+        }}
+      />
       <div className="flex min-h-11 items-center gap-5">
         <Link href={`/work/${project.discipline}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-ink">
           <ArrowLeft size={16} aria-hidden="true" />

@@ -27,10 +27,15 @@ export default function Header() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6 sm:py-5">
         <Link
           href="/"
-          className="font-display text-xl tracking-tight transition-opacity hover:opacity-70"
+          className="flex items-center gap-2 transition-opacity hover:opacity-70"
           aria-label="Koffi Cobbin home"
         >
-          Koffi Cobbin
+          <img
+            src="/images/koffi_cobbin.png"
+            alt="Koffi Cobbin"
+            className="h-8 w-auto"
+          />
+          <span className="font-display text-xl tracking-tight">Koffi Cobbin</span>
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm font-medium text-muted sm:flex lg:gap-8" aria-label="Main navigation">

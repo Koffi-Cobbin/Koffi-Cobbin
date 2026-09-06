@@ -70,5 +70,8 @@
     "vite": "catalog:",
     "wouter": "^3.3.5",
     "zod": "catalog:"
+  },
+  "dependencies": {
+    "react-helmet-async": "^3.0.0"
   }
 }

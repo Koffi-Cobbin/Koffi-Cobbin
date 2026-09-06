@@ -1,9 +1,15 @@
 import ContactForm from '@/components/ContactForm';
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 
 export default function ContactPage() {
   return (
     <div className="mx-auto flex min-h-[calc(100vh-10rem)] max-w-5xl items-center px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
+      <SEO
+        title="Contact"
+        description="Get in touch with Koffi Cobbin for software, hardware, or impact projects."
+        url="https://kofficobbin.com/contact"
+      />
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}

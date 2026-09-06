@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getTimeline } from '@/lib/api';
 import Timeline from '@/components/Timeline';
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 import profileImage from '@assets/Koffi_Cobbin_SNS_1788505789145.png';
 import { Github, Linkedin, Printer } from 'lucide-react';
@@ -23,6 +24,11 @@ export default function AboutPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
+      <SEO
+        title="About"
+        description="Experience and capabilities of Koffi Cobbin — building practical systems across software, hardware, and impact."
+        url="https://kofficobbin.com/about"
+      />
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
