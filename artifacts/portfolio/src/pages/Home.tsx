@@ -71,6 +71,7 @@ export default function HomePage() {
             discipline={discipline} 
             flagshipProjects={projects} 
             index={index}
+            disciplineCount={disciplines.length}
           />
         ))}
         </div>
