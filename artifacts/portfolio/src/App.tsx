@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import { type ReactNode, useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -33,20 +33,33 @@ function Layout({ children }: { children: ReactNode }) {
   );
 }
 
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
+
 function Router() {
   return (
-    <Layout>
-      <RoutedErrorBoundary>
-        <Switch>
-          <Route path="/" component={HomePage} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/contact" component={ContactPage} />
-          <Route path="/work/:discipline/:project" component={ProjectDetailPage} />
-          <Route path="/work/:discipline" component={DisciplineWorkPage} />
-          <Route component={NotFound} />
-        </Switch>
-      </RoutedErrorBoundary>
-    </Layout>
+    <>
+      <ScrollToTop />
+      <Layout>
+        <RoutedErrorBoundary>
+          <Switch>
+            <Route path="/" component={HomePage} />
+            <Route path="/about" component={AboutPage} />
+            <Route path="/contact" component={ContactPage} />
+            <Route path="/work/:discipline/:project" component={ProjectDetailPage} />
+            <Route path="/work/:discipline" component={DisciplineWorkPage} />
+            <Route component={NotFound} />
+          </Switch>
+        </RoutedErrorBoundary>
+      </Layout>
+    </>
   );
 }
 

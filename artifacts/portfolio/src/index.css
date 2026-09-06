@@ -95,3 +95,27 @@ body::before {
     transition-duration: 0.01ms !important;
   }
 }
+
+@media print {
+  @page {
+    margin: 16mm;
+  }
+
+  body {
+    background: #fff !important;
+  }
+
+  body::before,
+  header,
+  footer {
+    display: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+}

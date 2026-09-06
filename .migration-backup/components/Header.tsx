@@ -5,43 +5,21 @@ export default async function Header() {
   const disciplines = await getDisciplines();
 
   return (
-    <header className="sticky top-0 z-50 bg-paper/80 backdrop-blur-md border-b border-line">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        {/* Logo / Site Name */}
-        <Link
-          href="/"
-          className="font-display text-xl md:text-2xl text-ink hover:text-ink-light transition-colors"
-        >
-          Koffi Cobbin
+    <header className="border-b border-line">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+        <Link href="/" className="font-display text-lg">
+          Portfolio
         </Link>
-
-        {/* Navigation */}
-        <nav className="flex items-center gap-1 md:gap-2">
-          {/* Discipline Links */}
+        <nav className="flex gap-6 text-sm text-muted">
           {disciplines.map((d) => (
-            <Link
-              key={d.slug}
-              href={`/work/${d.slug}`}
-              className="px-3 py-2 text-sm font-medium text-muted hover:text-ink hover:bg-paper-dark rounded-lg transition-all"
-            >
+            <Link key={d.slug} href={`/work/${d.slug}`} className="hover:text-ink">
               {d.name}
             </Link>
           ))}
-
-          {/* Divider */}
-          <div className="w-px h-6 bg-line mx-2" />
-
-          {/* Utility Links */}
-          <Link
-            href="/about"
-            className="px-3 py-2 text-sm font-medium text-muted hover:text-ink hover:bg-paper-dark rounded-lg transition-all"
-          >
+          <Link href="/about" className="hover:text-ink">
             About
           </Link>
-          <Link
-            href="/contact"
-            className="px-4 py-2 text-sm font-medium bg-ink text-paper hover:bg-ink-light rounded-lg transition-colors ml-2"
-          >
+          <Link href="/contact" className="hover:text-ink">
             Contact
           </Link>
         </nav>

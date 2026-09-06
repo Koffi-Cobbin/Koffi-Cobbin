@@ -39,24 +39,29 @@ export default function ProjectDetailPage() {
   ].filter(Boolean) as { href: string; label: string; icon: typeof Github }[];
 
   return (
-    <article className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16 md:py-20 lg:py-24">
-      <Link href={`/work/${project.discipline}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-ink">
-        <ArrowLeft size={16} aria-hidden="true" />
-        Back to {discipline?.name ?? 'work'}
-      </Link>
+    <article className="mx-auto max-w-5xl px-4 py-4 sm:px-6 sm:py-6 md:py-8 lg:py-10">
+      <div className="flex min-h-11 items-center gap-5">
+        <Link href={`/work/${project.discipline}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-ink">
+          <ArrowLeft size={16} aria-hidden="true" />
+          Back to {discipline?.name ?? 'work'}
+        </Link>
+        <span
+          className="border-l border-line pl-5 text-[11px] font-bold uppercase tracking-[0.2em]"
+          style={{ color: discipline?.theme_color }}
+        >
+          {discipline?.name ?? 'Project'}
+        </span>
+      </div>
 
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <div className="mt-8 grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-end md:gap-14">
+        <div className="mt-4 grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-14">
           <div>
-            <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em]" style={{ color: discipline?.theme_color }}>
-              {discipline?.name ?? 'Project'}
-            </p>
             <h1 className="font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">{project.title}</h1>
           </div>
           <p className="max-w-md text-base font-medium leading-relaxed text-muted sm:text-lg">{project.summary}</p>
         </div>
 
-        <div className="mt-10 aspect-[4/3] overflow-hidden bg-line sm:mt-14 sm:aspect-[16/8]">
+        <div className="mt-7 aspect-[4/3] overflow-hidden bg-line sm:mt-9 sm:aspect-[16/8]">
           <img src={project.cover_image} alt={`${project.title} project cover`} className="h-full w-full object-cover" />
         </div>
 

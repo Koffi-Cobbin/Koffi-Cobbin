@@ -70,40 +70,42 @@ export default function ContactForm() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.1, duration: 0.5 }}
       onSubmit={handleSubmit(onSubmit)} 
-       className="mt-6 flex max-w-xl flex-col gap-4 sm:mt-8 sm:gap-5"
+       className="mt-0 flex flex-col gap-4 sm:gap-5"
     >
       <div className="hidden">
         <label htmlFor="honeypot">Leave this field empty</label>
         <input id="honeypot" tabIndex={-1} autoComplete="off" {...register('honeypot')} />
       </div>
 
-      <div className="group">
-        <label htmlFor="name" className="text-sm font-medium text-ink transition-colors">
-          Name
-        </label>
-        <input
-          id="name"
-          {...register('name')}
-           className="mt-1.5 w-full border border-line bg-transparent px-4 py-2.5 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink sm:mt-2 sm:py-3"
-           aria-invalid={!!errors.name}
-           aria-describedby={errors.name ? 'name-error' : undefined}
-        />
-        {errors.name && <p id="name-error" className="mt-2 text-sm font-medium text-red-600">{errors.name.message}</p>}
-      </div>
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+        <div className="group">
+          <label htmlFor="name" className="text-sm font-medium text-ink transition-colors">
+            Name
+          </label>
+          <input
+            id="name"
+            {...register('name')}
+             className="mt-1.5 w-full border border-line bg-transparent px-4 py-2.5 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink"
+             aria-invalid={!!errors.name}
+             aria-describedby={errors.name ? 'name-error' : undefined}
+          />
+          {errors.name && <p id="name-error" className="mt-2 text-sm font-medium text-red-600">{errors.name.message}</p>}
+        </div>
 
-      <div className="group">
-        <label htmlFor="email" className="text-sm font-medium text-ink transition-colors">
-          Email
-        </label>
-        <input
-          id="email"
-          type="email"
-          {...register('email')}
-           className="mt-1.5 w-full border border-line bg-transparent px-4 py-2.5 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink sm:mt-2 sm:py-3"
-           aria-invalid={!!errors.email}
-           aria-describedby={errors.email ? 'email-error' : undefined}
-        />
-        {errors.email && <p id="email-error" className="mt-2 text-sm font-medium text-red-600">{errors.email.message}</p>}
+        <div className="group">
+          <label htmlFor="email" className="text-sm font-medium text-ink transition-colors">
+            Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            {...register('email')}
+             className="mt-1.5 w-full border border-line bg-transparent px-4 py-2.5 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink"
+             aria-invalid={!!errors.email}
+             aria-describedby={errors.email ? 'email-error' : undefined}
+          />
+          {errors.email && <p id="email-error" className="mt-2 text-sm font-medium text-red-600">{errors.email.message}</p>}
+        </div>
       </div>
 
       <div className="group">
@@ -112,9 +114,9 @@ export default function ContactForm() {
         </label>
         <textarea
           id="message"
-           rows={4}
+           rows={3}
           {...register('message')}
-           className="mt-1.5 w-full resize-none border border-line bg-transparent px-4 py-2.5 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink sm:mt-2 sm:py-3"
+           className="mt-1.5 w-full resize-none border border-line bg-transparent px-4 py-2.5 text-base outline-none transition-all focus:border-ink focus:bg-white focus:ring-1 focus:ring-ink"
            aria-invalid={!!errors.message}
            aria-describedby={errors.message ? 'message-error' : undefined}
         />
