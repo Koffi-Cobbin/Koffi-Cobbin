@@ -39,22 +39,22 @@ export default function DisciplineCard({
           <span>Ways of working</span>
         </div>
 
-        <div className="mt-7 flex items-start gap-4">
-          <div
-            className="flex h-12 w-12 shrink-0 items-center justify-center"
-            style={{ backgroundColor: discipline.theme_color, color: 'var(--color-paper)' }}
-            aria-hidden="true"
-          >
-            <Layers3 size={22} strokeWidth={1.6} />
-          </div>
-          <div>
+        <div className="mt-7">
+          <div className="flex items-center gap-4">
+            <div
+              className="flex h-12 w-12 shrink-0 items-center justify-center"
+              style={{ backgroundColor: discipline.theme_color, color: 'var(--color-paper)' }}
+              aria-hidden="true"
+            >
+              <Layers3 size={22} strokeWidth={1.6} />
+            </div>
             <h2 id={titleId} className="font-display text-3xl leading-none tracking-tight">
               {discipline.name}
             </h2>
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
-              {discipline.description}
-            </p>
           </div>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+            {discipline.description}
+          </p>
         </div>
       </header>
 
