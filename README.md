@@ -1,91 +1,60 @@
 # Koffi Cobbin
 
-### Builder of useful software, physical prototypes, and impact-focused projects.
+### Maker · engineer · builder
 
-I design and build products at the intersection of technology, creativity, and
-real-world usefulness. This repository is the home of my public portfolio and
-the place where I document the work, experiments, and ideas behind the things I
-ship.
+I build practical systems across software, hardware, and impact—turning
+complex operational problems into tools people can use in the real world.
 
-## What I work on
+My work sits at the intersection of technology, creativity, and usefulness. I
+care about understanding the people and conditions around a problem, then
+building something clear, durable, and grounded in reality.
 
-- **Software products** — thoughtful interfaces, practical tools, and digital
-  experiences
-- **Physical prototypes** — turning early ideas into tangible, testable objects
-- **Impact-focused projects** — work grounded in people, context, and
-  meaningful outcomes
-- **Creative technology** — exploring the space between design, engineering,
-  and experimentation
+## What I do
 
-## About this repository
+- Product engineering
+- Geospatial systems
+- Embedded systems
+- Technical prototyping
+- Environmental monitoring
+- Community technology
 
-The portfolio is a responsive React application built with Vite and TypeScript.
-It presents projects by discipline, detailed project stories, an about page,
-and a contact flow.
+## Areas of practice
 
-The app is intentionally frontend-first and runs with local mock data by
-default, making it easy to explore and develop without a database or API
-credentials.
+### Software
 
-### Highlights
+I design and build digital products, operational tools, and data systems from
+early product thinking through shipped software.
 
-- Responsive portfolio browsing across desktop and mobile
-- Project and discipline-based navigation
-- Project detail pages with structured content
-- About page with timeline content
-- Contact form with local development fallback behavior
-- Optional API integration through `VITE_API_URL`
+### Hardware
 
-## Tech stack
+I prototype physical products and embedded systems, working across electronics,
+firmware, materials, and practical field constraints.
 
-`React` · `TypeScript` · `Vite` · `Tailwind CSS` · `Wouter` ·
-`TanStack React Query` · `Framer Motion` · `Radix UI` · `pnpm`
+### Impact
 
-## Run it locally
+I work on technology that helps move meaningful outcomes forward for people,
+organizations, and communities.
 
-Requirements:
+## Experience
 
-- Node.js 20+
-- pnpm 10
+- **Independent studio** — building production software and early-stage
+  hardware prototypes across logistics, environmental monitoring, and community
+  technology
+- **Senior Engineer, CivicTech Foundation** — building geospatial data
+  platforms for municipal infrastructure planning
+- **Embedded Systems Developer, OceanOps** — designing telemetry systems and
+  rugged field hardware for coastal environments
 
-```powershell
-corepack enable
-pnpm install
-pnpm run dev:portfolio
-```
+## How I work
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+- Start with the real need, not just the requested feature.
+- Make complex systems understandable and useful.
+- Prototype early and learn from constraints.
+- Connect digital tools to the physical contexts where they are used.
+- Ship work that is clear, practical, and built to last.
 
-For architecture notes, API configuration, routes, quality checks, and
-troubleshooting, see the [development guide](Development.md).
+## Connect
 
-## Repository map
-
-```text
-artifacts/portfolio/src/
-├── components/   Shared UI and portfolio components
-├── lib/          API helpers, types, and utilities
-├── mocks/        Local portfolio data
-└── pages/        Route-level page components
-```
-
-## Portfolio routes
-
-| Route | Description |
-| --- | --- |
-| `/` | Portfolio home |
-| `/about` | About page and timeline |
-| `/contact` | Contact form |
-| `/work/:discipline` | Projects grouped by discipline |
-| `/work/:discipline/:project` | Project detail |
-
-## Current focus
-
-Building work that is clear, useful, and grounded in the people and conditions
-around it.
-
----
-
-If you are exploring the portfolio, start at the home page. If you are
-interested in the implementation, start with
-[`Development.md`](Development.md).
+- [GitHub](https://github.com/Koffi-Cobbin)
+- [LinkedIn](https://linkedin.com/in/elijah-ocupualor-588734180)
+- [X](https://x.com/koffi_cobbin)
