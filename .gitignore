@@ -62,3 +62,6 @@ artifacts/*/.vite/
 .env
 .env.*
 !.env.example
+
+# other
+.opencode

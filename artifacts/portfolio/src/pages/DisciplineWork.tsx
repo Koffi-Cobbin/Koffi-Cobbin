@@ -161,12 +161,19 @@ export default function DisciplineWorkPage() {
                   >
                     <Link
                       href={`/work/${project.discipline}/${project.slug}`}
-                      className="group grid gap-5 py-7 transition-colors hover:bg-[#f5eee8] sm:grid-cols-[4rem_minmax(0,1.3fr)_minmax(12rem,0.8fr)_auto] sm:items-center sm:gap-6 sm:px-4"
+                      className="group grid gap-5 py-7 transition-colors hover:bg-[#f5eee8] sm:grid-cols-[5rem_minmax(0,1.3fr)_minmax(12rem,0.8fr)_auto] sm:items-center sm:gap-6 sm:px-4"
                       data-testid={`link-hardware-project-${project.slug}`}
                     >
-                      <span className="font-mono text-xs text-muted" aria-hidden="true">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
+                      <div className="relative aspect-square overflow-hidden bg-line">
+                        <img 
+                          src={project.cover_image} 
+                          alt={`${project.title} project`} 
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                        />
+                        <span className="absolute inset-0 flex items-center justify-center font-mono text-xs text-paper bg-ink/40">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </div>
 
                       <div className="min-w-0">
                         <div className="flex flex-wrap items-center gap-3">
@@ -229,34 +236,16 @@ export default function DisciplineWorkPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <div className="grid gap-8 border-b border-line pb-10 pt-4 sm:pb-14 sm:pt-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:pb-16 lg:pt-8">
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted">
-                Impact stories / field notes
-              </p>
-              <h2 className="mt-4 max-w-2xl font-display text-4xl leading-[0.96] tracking-tight sm:text-6xl">
-                Work that leaves the map better than it found it.
-              </h2>
-            </div>
-            <div className="self-end border-l-2 pl-5 text-sm leading-relaxed text-muted" style={{ borderLeftColor: discipline.theme_color }}>
-              <p className="font-bold uppercase tracking-widest text-[10px] text-ink">
-                Why these stories matter
-              </p>
-              <p className="mt-3">
-                Impact is not a label added at the end of a project. It is the
-                people, places, and outcomes that shape the work from the start.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {['People', 'Place', 'Progress'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="border border-line px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-muted"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div className="border-b border-line pb-10 pt-4 sm:pb-14 sm:pt-6 lg:pb-16 lg:pt-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted">
+              Impact stories / field notes
+            </p>
+            <h2 className="mt-4 max-w-2xl font-display text-4xl leading-[0.96] tracking-tight sm:text-6xl">
+              Work that leaves the map better than it found it.
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+              Projects built to move a real outcome for a real community.
+            </p>
           </div>
 
           {!impactStory ? (
@@ -295,7 +284,7 @@ export default function DisciplineWorkPage() {
                     <div className="flex flex-col justify-between p-6 sm:p-8 lg:p-10">
                       <div>
                         <p className="font-mono text-xs text-muted">
-                          {impactStory.date.slice(0, 4)} / {impactStory.tech_stack.length} tools in the stack
+                          {impactStory.date.slice(0, 4)} / Field story
                         </p>
                         <h3 className="mt-5 font-display text-3xl leading-[1.05] tracking-tight transition-colors group-hover:text-[#0f7a4d] sm:text-4xl">
                           {impactStory.title}
@@ -306,16 +295,6 @@ export default function DisciplineWorkPage() {
                       </div>
 
                       <div className="mt-10 border-t border-line pt-5">
-                        <div className="grid gap-5 sm:grid-cols-2">
-                          <div>
-                            <p className="text-[10px] font-bold uppercase tracking-widest text-muted">
-                              Built with
-                            </p>
-                            <p className="mt-2 text-sm font-medium text-ink">
-                              {impactStory.tech_stack.join(' / ')}
-                            </p>
-                          </div>
-                          <div>
                             <p className="text-[10px] font-bold uppercase tracking-widest text-muted">
                               Read the story
                             </p>
@@ -325,43 +304,10 @@ export default function DisciplineWorkPage() {
                                 →
                               </span>
                             </p>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
                 </Link>
-              </div>
-
-              <div className="grid gap-8 border-b border-line py-10 sm:py-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted">
-                    A closer look
-                  </p>
-                  <h2 className="mt-3 font-display text-3xl leading-tight sm:text-4xl">
-                    Start with the need. Follow the change.
-                  </h2>
-                </div>
-                <div className="grid gap-8 sm:grid-cols-2">
-                  <div className="border-t-2 border-[#0f7a4d] pt-4">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted">
-                      The need
-                    </p>
-                    <p className="mt-3 text-base leading-relaxed text-ink">
-                      Understand the people and conditions that made this project
-                      worth undertaking.
-                    </p>
-                  </div>
-                  <div className="border-t-2 border-line pt-4">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted">
-                      The work
-                    </p>
-                    <p className="mt-3 text-base leading-relaxed text-ink">
-                      See the choices, constraints, and outcomes behind the
-                      finished project.
-                    </p>
-                  </div>
-                </div>
               </div>
 
               {otherImpactStories.length > 0 && (
@@ -387,6 +333,13 @@ export default function DisciplineWorkPage() {
                           className="group block border-t border-line pt-4"
                           data-testid={`link-impact-story-${project.slug}`}
                         >
+                          <div className="aspect-[3/2] overflow-hidden bg-line mb-4">
+                            <img
+                              src={project.cover_image}
+                              alt={`${project.title} project`}
+                              className="h-full w-full object-cover grayscale-[0.15] transition duration-700 group-hover:scale-[1.03]"
+                            />
+                          </div>
                           <p className="font-mono text-xs text-muted">{project.date.slice(0, 4)}</p>
                           <h3 className="mt-3 font-display text-2xl transition-colors group-hover:text-[#0f7a4d]">
                             {project.title}

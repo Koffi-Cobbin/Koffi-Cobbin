@@ -52,22 +52,25 @@ export async function submitContact(payload: {
   message: string;
   honeypot: string;
 }): Promise<{ ok: boolean; error?: string }> {
-  if (!API_URL) {
-    // No backend configured yet — simulate success so the form flow is
-    // testable end-to-end before the real endpoint exists.
-    console.warn('[api] VITE_API_URL not set — contact form is mocked.');
+  // Honeypot check — if filled, silently pretend success
+  if (payload.honeypot) {
     await new Promise(resolve => setTimeout(resolve, 1000));
     return { ok: true };
   }
+
   try {
-    const res = await fetch(`${API_URL}/api/contact/`, {
+    const res = await fetch('https://formspree.io/f/mdeoljgy', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        name: payload.name,
+        email: payload.email,
+        message: payload.message,
+        _subject: `Portfolio Contact: ${payload.name}`,
+      }),
     });
     if (!res.ok) {
-      const data = await res.json().catch(() => ({}));
-      return { ok: false, error: data?.detail ?? 'Something went wrong. Try again.' };
+      return { ok: false, error: 'Something went wrong. Try again.' };
     }
     return { ok: true };
   } catch {
