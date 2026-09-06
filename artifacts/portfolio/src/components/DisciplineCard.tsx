@@ -33,14 +33,7 @@ export default function DisciplineCard({
         className="p-6 sm:p-7"
         style={{ backgroundColor: `${discipline.theme_color}12` }}
       >
-        <div className="flex items-center justify-between gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-muted">
-          <span style={{ color: discipline.theme_color }}>
-            {String(index + 1).padStart(2, '0')} / {String(disciplineCount).padStart(2, '0')}
-          </span>
-          <span>Ways of working</span>
-        </div>
-
-        <div className="mt-7">
+        <div>
           <div className="flex items-center gap-4">
             <div
               className="flex h-12 w-12 shrink-0 items-center justify-center"
