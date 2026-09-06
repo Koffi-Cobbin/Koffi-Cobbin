@@ -47,3 +47,18 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+.agents/
+.replit
+.replitignore
+replit.md
+**/.replit-artifact/
+.migration-backup/
+
+# Replit-generated build and preview output
+artifacts/*/dist/
+artifacts/*/.vite/
+
+# Local environment files
+.env
+.env.*
+!.env.example
