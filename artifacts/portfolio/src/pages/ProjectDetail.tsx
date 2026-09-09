@@ -59,20 +59,20 @@ export default function ProjectDetailPage() {
       <SEO
         title={project.title}
         description={project.summary}
-        image={project.cover_image.startsWith('http') ? project.cover_image : `https://kofficobbin.com${project.cover_image}`}
-        url={`https://kofficobbin.com/work/${project.discipline}/${project.slug}`}
+        image={project.cover_image.startsWith('http') ? project.cover_image : `https://koffi-cobbin.web.app${project.cover_image}`}
+        url={`https://koffi-cobbin.web.app/work/${project.discipline}/${project.slug}`}
         type="article"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'CreativeWork',
           'name': project.title,
           'description': project.summary,
-          'url': `https://kofficobbin.com/work/${project.discipline}/${project.slug}`,
-          'image': project.cover_image.startsWith('http') ? project.cover_image : `https://kofficobbin.com${project.cover_image}`,
+          'url': `https://koffi-cobbin.web.app/work/${project.discipline}/${project.slug}`,
+          'image': project.cover_image.startsWith('http') ? project.cover_image : `https://koffi-cobbin.web.app${project.cover_image}`,
           'author': {
             '@type': 'Person',
             'name': 'Koffi Cobbin',
-            'url': 'https://kofficobbin.com'
+            'url': 'https://koffi-cobbin.web.app'
           },
           'datePublished': project.date,
           'keywords': project.tech_stack.join(', ')

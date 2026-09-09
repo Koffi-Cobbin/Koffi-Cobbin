@@ -7,7 +7,7 @@ export default function NotFound() {
       <SEO
         title="Page Not Found"
         description="The page you're looking for doesn't exist or has been moved."
-        url="https://kofficobbin.com/404"
+        url="https://koffi-cobbin.web.app/404"
       />
       <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted">Page not found</p>
       <h1 className="mt-4 font-display text-4xl tracking-tight sm:text-5xl">That page moved.</h1>

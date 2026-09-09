@@ -40,7 +40,7 @@ export default function HomePage() {
       <SEO
         title={undefined}
         description="Portfolio of Koffi Cobbin — shipping software, physical prototypes, and projects built for real-world outcomes. Explore work in design, development, and innovation."
-        url="https://kofficobbin.com"
+        url="https://koffi-cobbin.web.app"
       />
       <motion.section 
         initial={{ opacity: 0, y: 15 }}

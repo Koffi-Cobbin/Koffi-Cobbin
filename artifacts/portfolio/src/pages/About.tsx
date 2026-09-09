@@ -26,7 +26,7 @@ export default function AboutPage() {
       <SEO
         title="About"
         description="Experience and capabilities of Koffi Cobbin — building practical systems across software, hardware, and impact."
-        url="https://kofficobbin.com/about"
+        url="https://koffi-cobbin.web.app/about"
       />
       <motion.div
         initial={{ opacity: 0, y: 15 }}

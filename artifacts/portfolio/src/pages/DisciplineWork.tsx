@@ -48,7 +48,7 @@ export default function DisciplineWorkPage() {
         <SEO
           title={discipline.name}
           description={discipline.description}
-          url={`https://kofficobbin.com/work/${discipline.slug}`}
+          url={`https://koffi-cobbin.web.app/work/${discipline.slug}`}
         />
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -104,7 +104,7 @@ export default function DisciplineWorkPage() {
         <SEO
           title={discipline.name}
           description={discipline.description}
-          url={`https://kofficobbin.com/work/${discipline.slug}`}
+          url={`https://koffi-cobbin.web.app/work/${discipline.slug}`}
         />
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -245,7 +245,7 @@ export default function DisciplineWorkPage() {
         <SEO
           title={discipline.name}
           description={discipline.description}
-          url={`https://kofficobbin.com/work/${discipline.slug}`}
+          url={`https://koffi-cobbin.web.app/work/${discipline.slug}`}
         />
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -379,7 +379,7 @@ export default function DisciplineWorkPage() {
       <SEO
         title={discipline.name}
         description={discipline.description}
-        url={`https://kofficobbin.com/work/${discipline.slug}`}
+        url={`https://koffi-cobbin.web.app/work/${discipline.slug}`}
       />
       <motion.div
         initial={{ opacity: 0, y: 15 }}

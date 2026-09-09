@@ -8,7 +8,7 @@ export default function ContactPage() {
       <SEO
         title="Contact"
         description="Get in touch with Koffi Cobbin for software, hardware, or impact projects."
-        url="https://kofficobbin.com/contact"
+        url="https://koffi-cobbin.web.app/contact"
       />
       <motion.div
         initial={{ opacity: 0, y: 15 }}
