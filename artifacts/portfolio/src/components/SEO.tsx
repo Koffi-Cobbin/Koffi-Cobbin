@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 
-const SITE_URL = 'https://kofficobbin.com';
+const SITE_URL = 'https://koffi-cobbin.web.app';
 const SITE_NAME = 'Koffi Cobbin';
-const DEFAULT_IMAGE = `${SITE_URL}/images/koffi_cobbin.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/images/previewImage.png`;
 const TWITTER_HANDLE = '@koffi_cobbin';
 
 interface SEOProps {

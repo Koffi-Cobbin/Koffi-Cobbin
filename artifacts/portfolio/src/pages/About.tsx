@@ -3,7 +3,6 @@ import { getTimeline } from '@/lib/api';
 import Timeline from '@/components/Timeline';
 import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
-import profileImage from '@assets/Koffi_Cobbin_SNS_1788505789145.png';
 import { Github, Linkedin, Printer } from 'lucide-react';
 import { FaXTwitter } from 'react-icons/fa6';
 
@@ -37,7 +36,7 @@ export default function AboutPage() {
       >
         <div className="flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between sm:gap-10">
           <div>
-            <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-muted">About / CV</p>
+            <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-muted">About</p>
             <h1 className="font-display text-4xl leading-tight tracking-tight sm:text-5xl lg:text-[3.5rem]">Koffi Cobbin</h1>
             <p className="mt-3 text-sm font-bold uppercase tracking-[0.18em] text-muted">Maker · engineer · builder</p>
             <p className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-ink/80 sm:text-lg">
@@ -78,7 +77,7 @@ export default function AboutPage() {
         <aside>
           <figure className="max-w-[220px]">
             <img
-              src={profileImage}
+              src="/images/koffi_cobbin.png"
               alt="Profile portrait"
               className="block aspect-square w-full object-cover"
             />
