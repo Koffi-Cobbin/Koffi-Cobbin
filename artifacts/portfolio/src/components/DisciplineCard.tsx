@@ -57,7 +57,7 @@ export default function DisciplineCard({
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted">
             Featured work
           </p>
-          <span className="font-mono text-xs text-muted">
+          <span className="font-mono text-xs" style={{ color: discipline.theme_color }}>
             {featuredProject
               ? `01 / ${String(featuredProjectCount).padStart(2, '0')}`
               : '00 / 00'}

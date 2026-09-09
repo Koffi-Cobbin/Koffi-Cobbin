@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const SITE_URL = 'https://koffi-cobbin.web.app';
+const SITE_URL = 'https://kofficobbin.com';
 const SITE_NAME = 'Koffi Cobbin';
 const DEFAULT_IMAGE = `${SITE_URL}/images/previewImage.png`;
 const TWITTER_HANDLE = '@koffi_cobbin';
@@ -36,6 +36,7 @@ export default function SEO({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:alt" content={`${fullTitle} preview image`} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="en_US" />
 
@@ -47,6 +48,7 @@ export default function SEO({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+      <meta name="twitter:image:alt" content={`${fullTitle} preview image`} />
 
       {/* Structured Data */}
       {structuredData && (
