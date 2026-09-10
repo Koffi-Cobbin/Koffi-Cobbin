@@ -16,7 +16,7 @@ interface SEOProps {
 
 export default function SEO({
   title,
-  description = 'Portfolio of Koffi Cobbin — shipping software, physical prototypes, and projects built for real-world outcomes.',
+  description = 'Building ruthless survival-grade systems across hardware, software, impact and pushing products to the edge of physics, efficiency, and economics.',
   image = DEFAULT_IMAGE,
   url = SITE_URL,
   type = 'website',
