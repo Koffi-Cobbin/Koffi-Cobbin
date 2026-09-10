@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SITE_URL = 'https://koffi-cobbin.web.app';
 const SITE_NAME = 'Koffi Cobbin';
-const DEFAULT_IMAGE = `${SITE_URL}/images/previewImage.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/images/koffi_cobbin.png`;
 const TWITTER_HANDLE = '@koffi_cobbin';
 
 interface SEOProps {
@@ -22,7 +22,7 @@ export default function SEO({
   type = 'website',
   structuredData,
 }: SEOProps) {
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Designer & Developer Portfolio`;
+  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Entrepreneur · Engineer · Builder`;
 
   return (
     <Helmet>
