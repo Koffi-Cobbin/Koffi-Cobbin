@@ -94,7 +94,7 @@ export default function ProjectDetailPage() {
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <div className="mt-4">
           <h1 className="font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">{project.title}</h1>
-          <p className="mt-4 max-w-2xl text-base font-medium leading-relaxed text-muted sm:text-lg">{project.summary}</p>
+          <p className="mt-4 text-base font-medium leading-relaxed text-muted sm:text-lg">{project.summary}</p>
         </div>
 
         <div className="mt-7 aspect-[4/3] overflow-hidden bg-line sm:mt-9 sm:aspect-[16/8]">

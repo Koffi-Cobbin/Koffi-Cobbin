@@ -74,7 +74,7 @@ export default function AboutPage() {
           </section>
         </main>
 
-        <aside>
+        <aside className="mx-auto md:mx-0">
           <figure className="max-w-[220px]">
             <img
               src="/images/koffi_cobbin.png"

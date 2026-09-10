@@ -1,6 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import { getDisciplines, getProjects } from '@/lib/api';
 import DisciplineCard from '@/components/DisciplineCard';
+import ImpactNumbers from '@/components/ImpactNumbers';
+import ExperienceTimeline from '@/components/ExperienceTimeline';
+import ContactCTA from '@/components/ContactCTA';
 import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
@@ -47,7 +50,7 @@ export default function HomePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <p className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-muted">Independent maker · selected work</p>
+        <p className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-muted">Making things that work in the real world</p>
         <h1 className="max-w-3xl font-display text-[2.65rem] leading-[1.04] tracking-tight sm:text-5xl lg:text-[4rem]">
           Building across software, hardware, and impact.
         </h1>
@@ -67,7 +70,7 @@ export default function HomePage() {
 
       <section className="mt-16 sm:mt-24" aria-labelledby="directions-heading">
         <div className="mb-5 flex items-end justify-between gap-4 border-b border-line pb-4 sm:mb-8">
-          <h2 id="directions-heading" className="text-sm font-bold uppercase tracking-[0.18em] text-muted">Ways of working</h2>
+          <h2 id="directions-heading" className="text-sm font-bold uppercase tracking-[0.18em] text-muted">The work</h2>
           <span className="text-xs text-muted">{disciplines.length} disciplines</span>
         </div>
         <div className="grid items-start gap-5 md:grid-cols-3 md:gap-8">
@@ -82,6 +85,16 @@ export default function HomePage() {
         ))}
         </div>
       </section>
+
+      <section className="mt-16 sm:mt-24">
+        <ImpactNumbers />
+      </section>
+
+      <section className="mt-16 sm:mt-24">
+        <ExperienceTimeline />
+      </section>
+
+      <ContactCTA />
     </div>
   );
 }

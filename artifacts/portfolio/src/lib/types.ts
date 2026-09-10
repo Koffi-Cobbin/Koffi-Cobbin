@@ -36,6 +36,7 @@ export interface TimelineEntry {
   date_range: string;
   description: string;
   discipline: string | null;
+  logo: string | null;
 }
 
 export interface ContactPayload {

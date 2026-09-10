@@ -126,7 +126,7 @@ export const projects: Project[] = [
   {
     slug: 'salvageme-impact',
     title: 'SalvageMe — Empowering Education in Kapioto',
-    summary: 'A community book exchange platform connecting donors with students and families in rural Ghana — providing educational resources to schools in need.',
+    summary: 'Delivered 450 exercise books and 150 pens to 110+ students in Kapioto, a rural community in Ghana\'s Savannah Region, through a grassroots book exchange initiative.',
     cover_image: '/images/SalvageMe/SalvageMe.png',
     discipline: 'impact',
     is_featured: true,
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     slug: 'hike-remote',
     title: 'HikeRemote',
     summary: 'An outdoor community for people who want more from a weekend. More sky. More challenge. More unexpected conversations with people who were strangers that morning.',
-    cover_image: '/images/HikeRemote/HikeRemote.png',
+    cover_image: '/images/HikeRemote/HikeRemote.jpg',
     discipline: 'impact',
     is_featured: true,
     tech_stack: ['React', 'Firebase', 'Tailwind CSS'],
@@ -188,6 +188,7 @@ export const timeline: TimelineEntry[] = [
     date_range: '2021 — present',
     description: 'Building AI-powered autonomous robots for seed planting, spraying, and mechanical in-row weeding, growing it from an early dorm-room prototype into a full-scale robot engineered, designed, and assembled entirely in Ghana.',
     discipline: "hardware",
+    logo: '/images/logos/3farmate_logo.png',
   },
   {
     title: 'Co-Founder',
@@ -195,6 +196,7 @@ export const timeline: TimelineEntry[] = [
     date_range: '2023 — present',
     description: 'SalvageMe is a Ghanaian led NGO with a community book exchange platform that connects book donors with students and families in Ghana. 110 students supported with books and pens in Kapiato,  a small rural community located in the Savannah Region of northern Ghana together with XTRAMILE Digital Studios.',
     discipline: 'impact',
+    logo: '/images/logos/SalvageMeInitiativeLogo.jpg',
   },
   {
     title: 'Product Development Intern',
@@ -202,6 +204,7 @@ export const timeline: TimelineEntry[] = [
     date_range: 'OCT 2021 — NOV 2021',
     description: 'Designed and prototyped PCB layouts using Eagle CAD software. Flashed, tested, and validated firmware on 50+ GrainMate devices across production batches to ensure proper functionality prior to deployment.',
     discipline: 'hardware',
+    logo: '/images/logos/sesi_logo.png',
   },
 ];
 

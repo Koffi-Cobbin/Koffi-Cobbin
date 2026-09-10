@@ -111,40 +111,18 @@ export default function DisciplineWorkPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <div className="grid gap-8 border-b border-line pb-10 pt-4 sm:pb-14 sm:pt-6 lg:grid-cols-[1.35fr_0.65fr] lg:gap-16 lg:pb-16 lg:pt-8">
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted">
-                Workbench catalogue / 2023—present
-              </p>
-              <h2 className="mt-4 max-w-2xl font-display text-4xl leading-[0.96] tracking-tight sm:text-6xl">
-                Built for the field, not the shelf.
-              </h2>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-                {discipline.description} Each entry is a record of the constraints,
-                materials, and decisions that make a physical system useful in the
-                real world.
-              </p>
-            </div>
-
-            <div className="self-end border-l-2 border-line pl-5 text-sm leading-relaxed text-muted">
-              <p className="font-bold uppercase tracking-widest text-[10px] text-ink">
-                Reading the catalogue
-              </p>
-              <p className="mt-3">
-                Start with the build status, then follow the materials and tools
-                into the full case study.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-bold uppercase tracking-widest text-muted">
-                <span className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-[#c2410c]" aria-hidden="true" />
-                  Prototype
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-ink" aria-hidden="true" />
-                  Featured
-                </span>
-              </div>
-            </div>
+          <div className="border-b border-line pb-10 pt-4 sm:pb-14 sm:pt-6 lg:pb-16 lg:pt-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted">
+              Workbench catalogue / 2023—present
+            </p>
+            <h2 className="mt-4 max-w-3xl font-display text-4xl leading-[0.96] tracking-tight sm:text-6xl">
+              Built for the field, not the shelf.
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              {discipline.description} Each entry is a record of the constraints,
+              materials, and decisions that make a physical system useful in the
+              real world.
+            </p>
           </div>
 
           {projects.length === 0 ? (
@@ -256,10 +234,10 @@ export default function DisciplineWorkPage() {
             <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted">
               Impact stories / field notes
             </p>
-            <h2 className="mt-4 max-w-2xl font-display text-4xl leading-[0.96] tracking-tight sm:text-6xl">
-              Work that leaves the map better than it found it.
+            <h2 className="mt-4 max-w-3xl font-display text-4xl leading-[0.96] tracking-tight sm:text-6xl">
+              Real problems. Real people. Real results.
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               Projects built to move a real outcome for a real community.
             </p>
           </div>
