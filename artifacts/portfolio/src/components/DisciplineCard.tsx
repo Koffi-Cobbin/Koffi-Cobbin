@@ -1,7 +1,7 @@
 import { Discipline, ProjectSummary } from '@/lib/types';
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Layers3 } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface Props {
   discipline: Discipline;
@@ -14,10 +14,8 @@ export default function DisciplineCard({
   discipline,
   flagshipProjects,
   index = 0,
-  disciplineCount = 3,
 }: Props) {
   const featuredProject = flagshipProjects[0];
-  const featuredProjectCount = flagshipProjects.length;
   const titleId = `discipline-card-title-${discipline.slug}`;
 
   return (
@@ -25,86 +23,85 @@ export default function DisciplineCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
-      className="h-full overflow-hidden border border-line bg-white/70 shadow-[0_20px_50px_-30px_rgba(28,27,26,0.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_56px_-28px_rgba(28,27,26,0.32)]"
-      style={{ borderTopColor: discipline.theme_color, borderTopWidth: 5 }}
+      className="group relative h-[420px] overflow-hidden border border-line bg-white shadow-[0_20px_50px_-30px_rgba(28,27,26,0.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_56px_-28px_rgba(28,27,26,0.32)] sm:h-[480px]"
       aria-labelledby={titleId}
     >
-      <header
-        className="p-6 sm:p-7"
-        style={{ backgroundColor: `${discipline.theme_color}12` }}
+      {/* Hero Image */}
+      <Link
+        href={`/work/${discipline.slug}`}
+        className="absolute inset-0"
+        aria-label={`View all ${discipline.name} work`}
       >
-        <div>
-          <div className="flex items-center gap-4">
+        <div className="absolute inset-0 overflow-hidden">
+          {featuredProject?.cover_image ? (
+            <img
+              src={featuredProject.cover_image}
+              alt=""
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          ) : (
             <div
-              className="flex h-12 w-12 shrink-0 items-center justify-center"
-              style={{ backgroundColor: discipline.theme_color, color: 'var(--color-paper)' }}
-              aria-hidden="true"
+              className="h-full w-full"
+              style={{
+                background: `linear-gradient(135deg, ${discipline.theme_color}22 0%, ${discipline.theme_color}08 100%)`
+              }}
+            />
+          )}
+          {/* Gradient overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(to top, ${discipline.theme_color}ee 0%, ${discipline.theme_color}99 40%, ${discipline.theme_color}33 70%, transparent 100%)`
+            }}
+          />
+        </div>
+
+        {/* Content overlay */}
+        <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-7">
+          {/* Top: Project count badge */}
+          <div className="flex justify-end">
+            {featuredProject && (
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+                {flagshipProjects.length} project{flagshipProjects.length !== 1 ? 's' : ''}
+              </span>
+            )}
+          </div>
+
+          {/* Bottom: Title and CTA */}
+          <div>
+            <h2
+              id={titleId}
+              className="font-display text-4xl leading-none tracking-tight text-white sm:text-5xl"
             >
-              <Layers3 size={22} strokeWidth={1.6} />
-            </div>
-            <h2 id={titleId} className="font-display text-3xl leading-none tracking-tight">
               {discipline.name}
             </h2>
-          </div>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-            {discipline.description}
-          </p>
-        </div>
-      </header>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/80">
+              {discipline.description}
+            </p>
 
-      <div className="p-6 sm:p-7">
-        <div className="flex items-baseline justify-between gap-4 border-b border-line pb-4">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted">
-            Featured work
-          </p>
-          <span className="font-mono text-xs" style={{ color: discipline.theme_color }}>
-            {featuredProject
-              ? `01 / ${String(featuredProjectCount).padStart(2, '0')}`
-              : '00 / 00'}
-          </span>
-        </div>
-
-        {featuredProject ? (
-          <ol className="divide-y divide-line">
-            <li>
-              <Link
-                href={`/work/${discipline.slug}/${featuredProject.slug}`}
-                className="group flex min-h-24 items-center gap-4 py-5 transition-colors hover:bg-[color-mix(in_srgb,var(--color-paper)_72%,var(--color-line))] sm:gap-5 sm:px-2"
-                aria-label={`Read ${featuredProject.title}`}
-                data-testid={`link-discipline-project-${featuredProject.slug}`}
-              >
-                <span className="w-5 shrink-0 font-mono text-xs text-muted" aria-hidden="true">
-                  01
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block font-display text-xl leading-tight transition-colors group-hover:text-[var(--color-muted)]">
-                    {featuredProject.title}
-                  </span>
-                  <span className="mt-2 block text-xs leading-relaxed text-muted">
-                    {featuredProject.summary}
-                  </span>
-                  <span className="mt-3 block text-[10px] font-bold uppercase tracking-[0.12em] text-muted/70">
-                    {featuredProject.tech_stack.slice(0, 2).join(' · ')}
-                  </span>
+            {/* Featured project teaser */}
+            {featuredProject && (
+              <div className="mt-4 flex items-center gap-3 border-t border-white/20 pt-4">
+                <span className="truncate text-xs font-medium text-white/90">
+                  {featuredProject.title}
                 </span>
                 <ArrowUpRight
-                  size={18}
-                  strokeWidth={1.75}
-                  className="shrink-0 text-muted transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink"
+                  size={14}
+                  className="shrink-0 text-white/70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   aria-hidden="true"
                 />
-              </Link>
-            </li>
-          </ol>
-        ) : (
-          <p className="border-b border-line py-8 text-sm text-muted">
-            No featured work published yet.
-          </p>
-        )}
+              </div>
+            )}
+          </div>
+        </div>
+      </Link>
 
+      {/* Browse all button - fixed at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 pt-0 sm:p-7 sm:pt-0">
         <Link
           href={`/work/${discipline.slug}`}
-          className="group mt-6 flex min-h-12 items-center justify-between border-2 border-ink px-4 text-sm font-bold transition-colors hover:bg-ink hover:text-paper"
+          className="flex min-h-11 items-center justify-between border-2 border-white/40 bg-white/10 px-4 text-sm font-bold text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20"
           data-testid={`link-discipline-${discipline.slug}`}
         >
           <span>Browse all {discipline.name.toLowerCase()} work</span>
