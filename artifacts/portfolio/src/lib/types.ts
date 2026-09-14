@@ -37,6 +37,8 @@ export interface TimelineEntry {
   description: string;
   discipline: string | null;
   logo: string | null;
+  tech_stack?: string[];
+  links?: ProjectLinks;
 }
 
 export interface ContactPayload {

@@ -7,13 +7,14 @@ interface Props {
   discipline: Discipline;
   flagshipProjects: ProjectSummary[];
   index?: number;
-  disciplineCount?: number;
+  projectCount?: number;
 }
 
 export default function DisciplineCard({
   discipline,
   flagshipProjects,
   index = 0,
+  projectCount = 0,
 }: Props) {
   const featuredProject = flagshipProjects[0];
   const titleId = `discipline-card-title-${discipline.slug}`;
@@ -61,9 +62,9 @@ export default function DisciplineCard({
         <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-7">
           {/* Top: Project count badge */}
           <div className="flex justify-end">
-            {featuredProject && (
+            {projectCount > 0 && (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
-                {flagshipProjects.length} project{flagshipProjects.length !== 1 ? 's' : ''}
+                {projectCount} project{projectCount !== 1 ? 's' : ''}
               </span>
             )}
           </div>

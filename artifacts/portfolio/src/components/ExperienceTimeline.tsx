@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getTimeline } from '@/lib/api';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 
 const disciplineColors: Record<string, string> = {
   software: '#3b5bdb',
@@ -89,11 +89,51 @@ export default function ExperienceTimeline() {
                   <p className="mt-0.5 text-sm font-medium text-muted">
                     {entry.organization}
                   </p>
-                  
-                  {/* Description - hidden on mobile unless expanded */}
+
+                  {/* Description */}
                   <div className={`mt-3 max-w-lg text-sm leading-relaxed text-muted/80 sm:block ${isExpanded ? 'block' : 'hidden'}`}>
                     {entry.description}
                   </div>
+
+                  {/* Tech stack tags */}
+                  {entry.tech_stack && entry.tech_stack.length > 0 && (
+                    <div className={`mt-3 flex flex-wrap gap-1.5 ${isExpanded ? 'flex' : 'hidden sm:flex'}`}>
+                      {entry.tech_stack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="inline-block rounded-full border border-line bg-paper px-2.5 py-0.5 text-[11px] font-medium text-muted"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Links */}
+                  {entry.links && (
+                    <div className={`mt-3 flex flex-wrap gap-3 ${isExpanded ? 'flex' : 'hidden sm:flex'}`}>
+                      {entry.links.live_demo && (
+                        <a
+                          href={entry.links.live_demo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-medium text-ink/60 transition-colors hover:text-ink"
+                        >
+                          Live demo <ExternalLink size={10} strokeWidth={2} />
+                        </a>
+                      )}
+                      {entry.links.repo && (
+                        <a
+                          href={entry.links.repo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-medium text-ink/60 transition-colors hover:text-ink"
+                        >
+                          Source code <ExternalLink size={10} strokeWidth={2} />
+                        </a>
+                      )}
+                    </div>
+                  )}
 
                   {/* View more button - mobile only */}
                   <button

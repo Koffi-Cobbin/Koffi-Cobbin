@@ -1,60 +1,41 @@
 # Koffi Cobbin
 
-### Maker · engineer · builder
+### Entrepreneur · engineer · builder
 
-I build practical systems across software, hardware, and impact—turning
-complex operational problems into tools people can use in the real world.
-
-My work sits at the intersection of technology, creativity, and usefulness. I
-care about understanding the people and conditions around a problem, then
-building something clear, durable, and grounded in reality.
+I build practical systems across software, hardware, and impact — turning
+complex problems into tools people can use in the real world.
 
 ## What I do
 
-- Product engineering
-- Geospatial systems
-- Embedded systems
-- Technical prototyping
-- Environmental monitoring
-- Community technology
+- Full-stack web development (React, Next.js, Django, Node.js)
+- REST API design and integration
+- Embedded systems and firmware development
+- PCB design and mechanical prototyping
+- Payment systems (Paystack) and authentication (OAuth2, JWT)
 
-## Areas of practice
+## Selected projects
 
-### Software
-
-I design and build digital products, operational tools, and data systems from
-early product thinking through shipped software.
-
-### Hardware
-
-I prototype physical products and embedded systems, working across electronics,
-firmware, materials, and practical field constraints.
-
-### Impact
-
-I work on technology that helps move meaningful outcomes forward for people,
-organizations, and communities.
+| Project | What it is | Stack |
+|---|---|---|
+| **MuseWave** | Full-stack music publishing platform for indie artists | React, Django REST Framework, PostgreSQL, JWT |
+| **FileForge** | Pluggable cloud-storage bridge with provider adapters | Django REST Framework, PostgreSQL, OAuth2, Google Drive API |
+| **SalvageMe** | Community book exchange connecting donors with students in Ghana | Django REST Framework, PostgreSQL, React, PostGIS |
+| **QuickDiscount** | Discount marketplace with token-based redemptions | React, Redux, Django REST Framework, Paystack |
+| **Xtramile** | Creative agency platform for photography, videography, and content | Next.js, TypeScript, Django REST Framework, FileForge |
+| **3Farmate** | Autonomous farming robot — embedded systems and hardware | PCB Design, Motor Control, Embedded C, CAD, Prototyping |
 
 ## Experience
 
-- **Independent studio** — building production software and early-stage
-  hardware prototypes across logistics, environmental monitoring, and community
-  technology
-- **Senior Engineer, CivicTech Foundation** — building geospatial data
-  platforms for municipal infrastructure planning
-- **Embedded Systems Developer, OceanOps** — designing telemetry systems and
-  rugged field hardware for coastal environments
-
-## How I work
-
-- Start with the real need, not just the requested feature.
-- Make complex systems understandable and useful.
-- Prototype early and learn from constraints.
-- Connect digital tools to the physical contexts where they are used.
-- Ship work that is clear, practical, and built to last.
+- **Hardware & Electronics Engineer, 3Farmate Robotics LTD** — motor drivers, sensor arrays, control boards, firmware, and chassis design across eight iterations over four years
+- **Software Engineer, FileForge** — pluggable cloud-storage bridge with dual auth, provider adapters, async uploads, and range-aware streaming
+- **Software Engineer, QuickDiscount** — full-stack marketplace with Paystack payments, token redemption, and organizer analytics
+- **Software Engineer, DrapeRoom** — browser-based 3D virtual try-on with Three.js and WebGL
+- **Co-Founder & Lead Software Engineer, SalvageMe** — Django REST backend, React frontends, notifications, and a donor leaderboard
+- **Product Development Intern, Sesi Technologies** — PCB design, firmware, and validation of 50+ GrainMate sensors
 
 ## Connect
 
+- [Website](https://koffi-cobbin.web.app)
 - [GitHub](https://github.com/Koffi-Cobbin)
 - [LinkedIn](https://linkedin.com/in/elijah-ocupualor-588734180)
 - [X](https://x.com/koffi_cobbin)

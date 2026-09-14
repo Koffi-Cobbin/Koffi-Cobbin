@@ -7,12 +7,14 @@ import { Github, Linkedin, Printer } from 'lucide-react';
 import { FaXTwitter } from 'react-icons/fa6';
 
 const capabilities = [
-  'Product engineering',
-  'Geospatial systems',
-  'Embedded systems',
-  'Technical prototyping',
-  'Environmental monitoring',
-  'Community technology',
+  'Full-stack web development (React, Django, Node.js)',
+  'REST API design and integration',
+  'Embedded systems and firmware development',
+  'PCB design and sensor integration',
+  'CAD and mechanical prototyping',
+  'Payment systems (Paystack) and authentication (OAuth2)',
+  '3D rendering (Three.js, WebGL)',
+  'Database design (PostgreSQL, MongoDB, Firebase)',
 ];
 
 export default function AboutPage() {
@@ -38,7 +40,7 @@ export default function AboutPage() {
           <div>
             <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-muted">About</p>
             <h1 className="font-display text-4xl leading-tight tracking-tight sm:text-5xl lg:text-[3.5rem]">Koffi Cobbin</h1>
-            <p className="mt-3 text-sm font-bold uppercase tracking-[0.18em] text-muted">Maker · engineer · builder</p>
+            <p className="mt-3 text-sm font-bold uppercase tracking-[0.18em] text-muted">Entrepreneur · engineer · builder</p>
             <p className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-ink/80 sm:text-lg">
               I build practical systems across software, hardware, and impact—turning complex
               operational problems into tools people can use in the real world.

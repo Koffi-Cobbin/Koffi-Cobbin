@@ -1,5 +1,6 @@
 import { TimelineEntry } from '@/lib/types';
 import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 
 export default function Timeline({ entries }: { entries: TimelineEntry[] }) {
   return (
@@ -20,6 +21,44 @@ export default function Timeline({ entries }: { entries: TimelineEntry[] }) {
             <h3 className="font-display mt-2 text-2xl tracking-tight leading-snug">{entry.title}</h3>
             <p className="text-sm font-medium mt-1 text-ink/80">{entry.organization}</p>
             <p className="mt-3 text-muted leading-relaxed max-w-prose text-[15px]">{entry.description}</p>
+
+            {entry.tech_stack && entry.tech_stack.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {entry.tech_stack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="inline-block rounded-full border border-line bg-paper px-2.5 py-0.5 text-[11px] font-medium text-muted"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {entry.links && (
+              <div className="mt-3 flex flex-wrap gap-3">
+                {entry.links.live_demo && (
+                  <a
+                    href={entry.links.live_demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-ink/60 transition-colors hover:text-ink"
+                  >
+                    Live demo <ExternalLink size={10} strokeWidth={2} />
+                  </a>
+                )}
+                {entry.links.repo && (
+                  <a
+                    href={entry.links.repo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-ink/60 transition-colors hover:text-ink"
+                  >
+                    Source code <ExternalLink size={10} strokeWidth={2} />
+                  </a>
+                )}
+              </div>
+            )}
           </motion.li>
         ))}
       </ol>

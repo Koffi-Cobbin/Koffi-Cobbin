@@ -19,6 +19,11 @@ export default function HomePage() {
     queryFn: () => getProjects({ featured: true })
   });
 
+  const { data: allProjects = [] } = useQuery({
+    queryKey: ['projects'],
+    queryFn: () => getProjects()
+  });
+
   if (loadingDisciplines || loadingProjects) {
     return (
       <div className="mx-auto max-w-5xl animate-pulse px-4 py-16 sm:px-6 sm:py-24">
@@ -35,7 +40,8 @@ export default function HomePage() {
 
   const flagshipByDiscipline = disciplines.map(d => ({
     discipline: d,
-    projects: flagshipProjects.filter(p => p.discipline === d.slug)
+    projects: flagshipProjects.filter(p => p.discipline === d.slug),
+    totalCount: allProjects.filter(p => p.discipline === d.slug).length,
   }));
 
   return (
@@ -74,13 +80,13 @@ export default function HomePage() {
           <span className="text-xs text-muted">{disciplines.length} disciplines</span>
         </div>
         <div className="grid items-start gap-5 md:grid-cols-3 md:gap-8">
-        {flagshipByDiscipline.map(({ discipline, projects }, index) => (
+        {flagshipByDiscipline.map(({ discipline, projects, totalCount }, index) => (
           <DisciplineCard 
             key={discipline.slug} 
             discipline={discipline} 
             flagshipProjects={projects} 
             index={index}
-            disciplineCount={disciplines.length}
+            projectCount={totalCount}
           />
         ))}
         </div>
