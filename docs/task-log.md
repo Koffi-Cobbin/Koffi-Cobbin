@@ -18,6 +18,7 @@ entries to a single line; put decisions, blockers, and follow-ups in Notes.
 
 | Date | Task | Status | Notes / Outcome |
 | --- | --- | --- | --- |
+| 2026-10-09 | Fix 8 of 10 audit vulnerabilities via pnpm overrides (js-yaml, brace-expansion, source-map-js, fast-uri, postcss-selector-parser 6→7, proxy-addr CRITICAL) | ✅ Done | `pnpm-workspace.yaml` overrides with GHSA references; verified: audit 10→2, typecheck exit 0, portfolio build exit 0 |
 | 2026-10-09 | Differentiate experience titles (FileForge → Backend Engineer, QuickDiscount → Fullstack Developer, DrapeRoom → Frontend Engineer, SalvageMe → Co-Founder & Lead Fullstack Developer) | ✅ Done | Updated `artifacts/portfolio/src/mocks/data.ts` and `README.md` to stay in sync |
 | 2026-10-09 | Create task log in `docs/` | ✅ Done | First file in `docs/`; format defined above |
 | 2026-10-09 | Explore repository (monorepo, portfolio, API, backend docs) | ✅ Done | Surveyed workspace layout, Vite portfolio, Express/orval/Drizzle scaffolding, Django blueprint; found no tests |

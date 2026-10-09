@@ -175,6 +175,18 @@ overrides:
   "@esbuild-kit/esm-loader": "npm:tsx@^4.21.0"
   esbuild: "0.27.3"
 
+  # --- SECURITY: audit fixes (pnpm audit) ----------------------------------
+  # Transitive deps pinned to the first patched release. Remove entries once
+  # upstream parents ship fixed versions.
+  # `braces` intentionally absent — no patched release exists yet
+  # (GHSA-vfj7-8cjw-p6xm); accepted risk (dev-only tooling).
+  js-yaml: ^4.3.2 # GHSA-2883-xcg3-v3hh (via orval)
+  brace-expansion: ^5.0.12 # GHSA-qhr7-859c-m2p7, GHSA-6j4f-fj2g-mc7p, GHSA-q2hr-2g5m-vwhr (via typedoc/minimatch)
+  source-map-js: ^1.2.2 # GHSA-68fv-2mgg-jv7q (via vite/postcss, tailwindcss)
+  fast-uri: ^3.1.8 # GHSA-hrr3-gc8f-f4qj (via @scalar/openapi-parser/ajv)
+  postcss-selector-parser: ^7.1.6 # GHSA-rj75-hqrm-r3gf (via @tailwindcss/typography) — major bump, build-verify
+  proxy-addr: ^2.0.8 # GHSA-jqcg-44mw-7w3h CRITICAL (via express, api-server)
+
   
 allowBuilds:
   esbuild: true
