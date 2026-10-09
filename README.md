@@ -27,10 +27,10 @@ complex problems into tools people can use in the real world.
 ## Experience
 
 - **Hardware & Electronics Engineer, 3Farmate Robotics LTD** — motor drivers, sensor arrays, control boards, firmware, and chassis design across eight iterations over four years
-- **Software Engineer, FileForge** — pluggable cloud-storage bridge with dual auth, provider adapters, async uploads, and range-aware streaming
-- **Software Engineer, QuickDiscount** — full-stack marketplace with Paystack payments, token redemption, and organizer analytics
-- **Software Engineer, DrapeRoom** — browser-based 3D virtual try-on with Three.js and WebGL
-- **Co-Founder & Lead Software Engineer, SalvageMe** — Django REST backend, React frontends, notifications, and a donor leaderboard
+- **Backend Engineer, FileForge** — pluggable cloud-storage bridge with dual auth, provider adapters, async uploads, and range-aware streaming
+- **Fullstack Developer, QuickDiscount** — full-stack marketplace with Paystack payments, token redemption, and organizer analytics
+- **Frontend Engineer, DrapeRoom** — browser-based 3D virtual try-on with Three.js and WebGL
+- **Co-Founder & Lead Fullstack Developer, SalvageMe** — Django REST backend, React frontends, notifications, and a donor leaderboard
 - **Product Development Intern, Sesi Technologies** — PCB design, firmware, and validation of 50+ GrainMate sensors
 
 ## Connect

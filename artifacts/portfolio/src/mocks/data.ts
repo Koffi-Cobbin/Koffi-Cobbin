@@ -206,7 +206,7 @@ export const timeline: TimelineEntry[] = [
     tech_stack: ['PCB Design', 'Motor Control', 'Sensor Integration', 'Embedded C', 'CAD', 'Prototyping', 'Field Testing'],
   },
   {
-    title: 'Software Engineer',
+    title: 'Backend Engineer',
     organization: 'FileForge — Cloud Storage Bridge',
     date_range: '2025',
     description: 'Built a pluggable cloud-storage bridge with Django REST Framework. Designed a dual auth system — JWT for developer management, API keys for server-to-server calls. Implemented provider adapters for Google Drive and Cloudinary, async and sync upload flows, direct upload with signed URLs, and range-aware streaming for audio/video.',
@@ -216,7 +216,7 @@ export const timeline: TimelineEntry[] = [
     links: { live_demo: 'https://fileforgeservice.web.app' },
   },
   {
-    title: 'Software Engineer',
+    title: 'Fullstack Developer',
     organization: 'QuickDiscount — Discount Marketplace',
     date_range: '2025',
     description: 'Built a full-stack discount marketplace with a Django REST Framework backend and React frontend. Implemented Paystack payments with card and mobile money support, token-based redemption flow, organizer analytics dashboard, and a review system with ratings and helpfulness voting.',
@@ -226,7 +226,7 @@ export const timeline: TimelineEntry[] = [
     links: { live_demo: 'https://quickdiscountgh.com' },
   },
   {
-    title: 'Software Engineer',
+    title: 'Frontend Engineer',
     organization: 'DrapeRoom — 3D Virtual Try-On',
     date_range: '2025',
     description: 'Built a browser-based 3D clothing try-on experience. Implemented real-time avatar rendering with Three.js and WebGL, integrated garment physics, and shipped a performant React frontend that runs on consumer hardware without plugins.',
@@ -236,7 +236,7 @@ export const timeline: TimelineEntry[] = [
     links: { live_demo: 'https://drape-room.web.app' },
   },
   {
-    title: 'Co-Founder & Lead Software Engineer',
+    title: 'Co-Founder & Lead Fullstack Developer',
     organization: 'SalvageMe Initiative Foundation',
     date_range: '2023 — present',
     description: 'Built the SalvageMe platform — a Django REST Framework API with PostgreSQL + PostGIS, two React + Vite frontends (public app and admin panel), JWT auth, in-app notifications, a partner application system, and a donor leaderboard. Delivered 450 books and 150 pens to 110+ students in Kapioto.',
